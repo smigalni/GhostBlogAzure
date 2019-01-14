@@ -1,4 +1,7 @@
 # GhostBlogAzure
+## Prerequisite
+Create your own Azure Account.
+
 ## Your Ghost blog ready for Azure app service deployment. 
 <a href="https://azuredeploy.net/" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 <p>
