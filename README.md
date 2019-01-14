@@ -8,7 +8,7 @@
 The current version of Ghost(2.10.0) is not compatible with Azure App Service. GhostBlogAzure is a production-ready template which can be hosted directly on Azure App Service. I will try to maintain the ghost version updated. All contributions are welcome.
 
 ## Usage
-### 1. Fork this repository.
+### 1. Fork or Clone this repository.
 ### 2. Branch out from the branch "master".
 ```bash
 git checkout master
