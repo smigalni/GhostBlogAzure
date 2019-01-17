@@ -102,6 +102,9 @@ module.exports = function setupSiteApp(options = {}) {
     // Serve robots.txt if not found in theme
     siteApp.use(servePublicFile('robots.txt', 'text/plain', constants.ONE_HOUR_S));
 
+    // Serve loader.txt for doing load testing using loader.io
+    siteApp.use(express.static(path.join(__dirname, 'public_loader')))
+
     // setup middleware for internal apps
     // @TODO: refactor this to be a proper app middleware hook for internal & external apps
     config.get('apps:internal').forEach(function (appName) {
@@ -148,7 +151,9 @@ module.exports = function setupSiteApp(options = {}) {
 
 module.exports.reload = () => {
     // https://github.com/expressjs/express/issues/2596
-    router = siteRoutes({start: true});
+    router = siteRoutes({
+        start: true
+    });
     setPrototypeOf(SiteRouter, router);
 
     // re-initialse apps (register app routers, because we have re-initialised the site routers)
